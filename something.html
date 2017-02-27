@@ -12,7 +12,7 @@
       class MyTitle extends React.Component {
         render() {
           return(
-            React.createElement('h1', {id: 'my-h1'}, 'this is my component')
+            React.createElement('h1', {className: 'my-h1'}, this.props.title)
           )
         }
       }
@@ -21,14 +21,13 @@
         render() {
           return(
             React.createElement('div', {},
-              React.createElement(MyTitle),
-              React.createElement(MyTitle),
-              React.createElement(MyTitle),
-              React.createElement(MyTitle)
+              React.createElement(MyTitle, { title: 'Iron Fist' } ),
+              React.createElement(MyTitle, { title: 'White Helmets' } ),
+              React.createElement(MyTitle, { title: 'House of Cards' } ),
+              React.createElement(MyTitle, { title: 'Stranger Things' } )
             )
           )
         }
-
       }
 
       ReactDOM.render(React.createElement(App), document.getElementById('root'))
