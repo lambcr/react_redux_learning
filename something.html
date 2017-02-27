@@ -8,5 +8,16 @@
     <div id='root'>React has not yet rendered</div>
     <script src='https://unpkg.com/react@15.3.0/dist/react.min.js'></script>
     <script src='https://unpkg.com/react-dom@15.3.0/dist/react-dom.min.js'></script>
+    <script>
+      class MyTitle extends React.Component {
+        render() {
+          return(
+            React.createElement('h1', {id: 'my-h1'}, 'this is my component')
+          )
+        }
+      }
+
+      ReactDOM.render(React.createElement(MyTitle), document.getElementById('root'))
+    </script>
   </body>
 </html>
