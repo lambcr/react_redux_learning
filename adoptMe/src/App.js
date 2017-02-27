@@ -33,7 +33,7 @@ class App extends React.Component {
   render() {
     return(
       <div className='app'>
-        <img src='images/adopt-me.png' alt='adopt-me logo' />
+        <img src='adopt-me.png' alt='adopt-me logo' />
         <div>
           <pre><code>
             {JSON.stringify(this.state, null, 4)}
