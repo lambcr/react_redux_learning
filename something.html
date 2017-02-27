@@ -6,9 +6,10 @@
   </head>
   <body>
     <div id='root'>React has not yet rendered</div>
+    <script src='https://unpkg.com/babel-standalone@6.12.0/babel.min.js'></script>
     <script src='https://unpkg.com/react@15.3.0/dist/react.min.js'></script>
     <script src='https://unpkg.com/react-dom@15.3.0/dist/react-dom.min.js'></script>
-    <script>
+    <script type='text/babel'>
 
       class MyTitle extends React.Component {
         constructor(props) {
@@ -33,11 +34,13 @@
             fontWeight = 'normal'
           }
           return(
-            React.createElement('h1', {
-              className: 'my-h1',
-              style: { fontWeight: fontWeight, color: this.props.color },
-              onClick: this.handleClick
-            }, this.props.title)
+            <h1
+              className='my-h1'
+              style={{ fontWeight: fontWeight, color: this.props.color }}
+              onClick={this.handleClick}
+            >
+              {this.props.title}
+            </h1>
           )
         }
       }
@@ -45,12 +48,12 @@
       class App extends React.Component {
         render() {
           return(
-            React.createElement('div', {},
-              React.createElement(MyTitle, { title: 'Iron Fist', color: 'peru' } ),
-              React.createElement(MyTitle, { title: 'White Helmets', color: 'mediumaquamarine' } ),
-              React.createElement(MyTitle, { title: 'House of Cards', color: 'papayawhip' } ),
-              React.createElement(MyTitle, { title: 'Stranger Things', color: 'rebeccapurple' } )
-            )
+            <div>
+              <MyTitle title='Iron Fist' color='peru' />
+              <MyTitle title='White Helmets' color='mediumaquamarine' />
+              <MyTitle title='House of Cards' color='papayawhip' />
+              <MyTitle title='Stranger Things' color='rebeccapurple' />
+            </div>
           )
         }
       }
