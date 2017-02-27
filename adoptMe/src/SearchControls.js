@@ -1,8 +1,7 @@
 import React from 'react'
 import petfinder from './petfinder-client'
+import { ANIMALS } from './petfinder-client'
 const pf = petfinder()
-
-const ANIMALS = ['cat', 'dog']
 
 class SearchControls extends React.Component {
   constructor(props) {
