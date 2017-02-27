@@ -4,13 +4,11 @@ const MAX_DESCRIPTION_LENGTH = 150
 class Pet extends React.Component {
 
   render() {
-    let photos
+    let photos = []
     if(this.props.pet.media) {
       photos = this.props.pet.media.photos.photo.filter((photo) => {
         return photo['@size'] === 'pn'
       })
-    } else {
-      photos = []
     }
 
     const description = this.props.pet.description || ''
