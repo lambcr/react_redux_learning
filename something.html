@@ -9,10 +9,25 @@
     <script src='https://unpkg.com/react@15.3.0/dist/react.min.js'></script>
     <script src='https://unpkg.com/react-dom@15.3.0/dist/react-dom.min.js'></script>
     <script>
+
       class MyTitle extends React.Component {
+        constructor(props) {
+          super(props)
+
+          this.state = {
+            isBolded: true
+          }
+        }
+
         render() {
+          let fontWeight;
+          if(this.state.isBolded) {
+            fontWeight = 'bold'
+          } else {
+            fontWeight = 'normal'
+          }
           return(
-            React.createElement('h1', {className: 'my-h1', style: { color: this.props.color } }, this.props.title)
+            React.createElement('h1', {className: 'my-h1', style: { fontWeight: fontWeight, color: this.props.color } }, this.props.title)
           )
         }
       }
