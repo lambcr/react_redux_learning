@@ -17,6 +17,12 @@
           this.state = {
             isBolded: true
           }
+
+          this.handleClick = this.handleClick.bind(this)
+        }
+
+        handleClick(event) {
+          this.setState({ isBolded: !this.state.isBolded })
         }
 
         render() {
@@ -27,7 +33,11 @@
             fontWeight = 'normal'
           }
           return(
-            React.createElement('h1', {className: 'my-h1', style: { fontWeight: fontWeight, color: this.props.color } }, this.props.title)
+            React.createElement('h1', {
+              className: 'my-h1',
+              style: { fontWeight: fontWeight, color: this.props.color },
+              onClick: this.handleClick
+            }, this.props.title)
           )
         }
       }
