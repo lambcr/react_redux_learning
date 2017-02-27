@@ -12,7 +12,7 @@
       class MyTitle extends React.Component {
         render() {
           return(
-            React.createElement('h1', {className: 'my-h1'}, this.props.title)
+            React.createElement('h1', {className: 'my-h1', style: { color: this.props.color } }, this.props.title)
           )
         }
       }
@@ -21,10 +21,10 @@
         render() {
           return(
             React.createElement('div', {},
-              React.createElement(MyTitle, { title: 'Iron Fist' } ),
-              React.createElement(MyTitle, { title: 'White Helmets' } ),
-              React.createElement(MyTitle, { title: 'House of Cards' } ),
-              React.createElement(MyTitle, { title: 'Stranger Things' } )
+              React.createElement(MyTitle, { title: 'Iron Fist', color: 'peru' } ),
+              React.createElement(MyTitle, { title: 'White Helmets', color: 'mediumaquamarine' } ),
+              React.createElement(MyTitle, { title: 'House of Cards', color: 'papayawhip' } ),
+              React.createElement(MyTitle, { title: 'Stranger Things', color: 'rebeccapurple' } )
             )
           )
         }
