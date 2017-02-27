@@ -38,7 +38,7 @@ class App extends React.Component {
   }
 
   changeBreed(breed) {
-    this.setState({breed})
+    this.setState({breed}, () => { this.search() })
   }
 
   render() {
